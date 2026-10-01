@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #020617; /* bg-slate-950 */
+    color: #f8fafc; /* text-slate-50 / text-white */
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.4);
+  }
+}
+
+/* Glass cards and panels */
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-navbar {
+  background-color: rgba(2, 6, 23, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Ambient glow utility */
+.ambient-glow {
+  background-color: rgba(6, 182, 212, 0.1);
+  filter: blur(64px);
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+/* Gradient accents */
+.gradient-accent {
+  background: linear-gradient(to right, #22d3ee, #3b82f6, #a855f7);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #22d3ee, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
